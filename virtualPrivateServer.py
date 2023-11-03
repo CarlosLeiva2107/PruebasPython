@@ -7,14 +7,17 @@ def virtualPrivateServer(process, m):
             if i+j < len(process):
                 sum_numbers += process[i+j]
         max_sums.append(sum_numbers)
+
+
     max_value = max(max_sums)
-    for i in range(len(max_sums)):
-        if max_sums[i] == max_value:
-            for j in range(m):
-                del process[i]
+    max_index = max_sums.index(max_value)
+
+    for j in range(m):
+        del process[max_index]
+        
     print(sum(process))
     
    
 
 
-virtualPrivateServer([4,6,10,8,2,1],3)
+virtualPrivateServer([10,4,8,1],2)
